@@ -9,7 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo/webpack-config": "^0.17.0",
+    "@expo/webpack-config": "^0.16.19",
     "@react-native-masked-view/masked-view": "^0.2.7",
     "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/native": "^6.0.13",
@@ -18,12 +18,14 @@
     "expo": "~46.0.9",
     "expo-status-bar": "~1.4.0",
     "install": "^0.13.0",
+    "native-base": "^3.4.17",
     "react": "18.0.0",
     "react-dom": "^18.0.0",
-    "react-native": "0.69.5",
+    "react-native": "^0.69.6",
     "react-native-gesture-handler": "~2.5.0",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-screens": "~3.15.0",
+    "react-native-step-indicator": "^1.0.3",
     "react-native-timeline-flatlist": "^0.8.0",
     "react-native-web": "^0.18.9"
   },

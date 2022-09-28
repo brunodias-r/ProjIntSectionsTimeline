@@ -5,6 +5,7 @@ import React from 'react';
 import Home from './pages/Home';
 import Notification from './pages/Notification';
 import TimeLine from './pages/TimeLine';
+import Atendance from './pages/Atendance';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,7 +13,7 @@ export default function Routes() {
     return (
         <Tab.Navigator
             initialRouteName="Home"
-            tabBarOptions={{
+            screenOptions={{
                 style: {
                     backgroundColor: '#121213',
                     borderTopColor: 'transparent'
@@ -56,6 +57,17 @@ export default function Routes() {
                     tabBarIcon: ({ size, color }) => (
                         // <Entype name='notification' size={size} color={color} />
                         <MaterialCommunityIcons name="notification-clear-all" size={size} color={color} />
+                    )
+                }}
+            />
+
+            <Tab.Screen
+                name="Atendance"
+                component={Atendance}
+                options={{
+                    tabBarIcon: ({ size, color }) => (
+                        // <Entypo name="home" size={size} color={color} />
+                        <MaterialCommunityIcons name="timeline-minus" size={size} color={color} />
                     )
                 }}
             />

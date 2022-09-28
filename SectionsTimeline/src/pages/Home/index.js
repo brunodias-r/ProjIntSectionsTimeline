@@ -1,13 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Button, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, Button, View, Separator, Alert } from 'react-native';
+import React from 'react';
 
-export default function Home(){
+export default function Home() {
+
   return (
     <View style={styles.container}>
       <Text>
         Home
       </Text>
-    </View>
+      <Button
+        title="Press me"
+        onPress={() => Alert.alert('Simple Button pressed')}
+      />
+    </View >
+    
   );
 }
 
@@ -17,5 +24,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#ff0000',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: '#737373',
+    borderBottomWidth: StyleSheet.hairlineWidth,
   },
 });
