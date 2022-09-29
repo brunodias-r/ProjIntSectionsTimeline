@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TouchableOpacity, Button, View, Separator, Alert } from 'react-native';
 import React from 'react';
 
-export default function Home() {
+export default function Challenge() {
 
   return (
     <View style={styles.container}>
@@ -14,7 +14,6 @@ export default function Home() {
         onPress={() => Alert.alert('Simple Button pressed')}
       />
     </View >
-    
   );
 }
 

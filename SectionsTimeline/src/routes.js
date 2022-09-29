@@ -2,7 +2,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 
-import Home from './pages/Home';
+import Challenge from './pages/Challenge';
 import Notification from './pages/Notification';
 import TimeLine from './pages/TimeLine';
 import Atendance from './pages/Atendance';
@@ -30,8 +30,8 @@ export default function Routes() {
             }}>
 
             <Tab.Screen
-                name="Home"
-                component={Home}
+                name="Challenge"
+                component={Challenge}
                 options={{
                     tabBarIcon: ({ size, color }) => (
                         // <Entypo name="home" size={size} color={color} />
