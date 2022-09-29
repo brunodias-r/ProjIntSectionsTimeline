@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 
 import Challenge from './pages/Challenge';
-import Notification from './pages/Notification';
+import Activity from './pages/Activity';
 import TimeLine from './pages/TimeLine';
 import Atendance from './pages/Atendance';
 
@@ -51,8 +51,8 @@ export default function Routes() {
             />
 
             <Tab.Screen
-                name="Notification"
-                component={Notification}
+                name="Activity"
+                component={Activity}
                 options={{
                     tabBarIcon: ({ size, color }) => (
                         // <Entype name='notification' size={size} color={color} />
