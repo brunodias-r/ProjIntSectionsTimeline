@@ -1,106 +1,106 @@
-// import React in our code
-import React from 'react';
-
-// import all the components we are going to use
+import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-
-// import Timeline
 import Timeline from 'react-native-timeline-flatlist';
 
-const TimeLine = () => {
-  const data = [
-    {
-      time: '09:00',
-      title: 'Event 1',
-      description: 'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '10:45',
-      title: 'Event 2',
-      description: 'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '12:00',
-      title: 'Event 2',
-      description: 'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '14:00',
-      title: 'Event 3',
-      description: 'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '16:30',
-      title: 'Event 4',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '16:30',
-      title: 'Event 4',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '16:30',
-      title: 'Event 4',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '16:30',
-      title: 'Event 4',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '16:30',
-      title: 'Event 4',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '16:30',
-      title: 'Event 4',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing.',
-    },
-    {
-      time: '16:30',
-      title: 'Event 4',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing.',
-    },
-  ];
+//import api from './service/api.js';
 
-  return (
-    <View style={styles.container}>
-      <ScrollView>
-        <Text style={styles.title}>Timeline da UC</Text>
-        <Timeline
-          data={data}
-          circleSize={20}
-          circleColor="black"
-          lineColor="black"
-          titleStyle={styles.titleStyle}
-          timeContainerStyle={styles.timeContainerStyle}
-          timeStyle={styles.timeStyle}
-          descriptionStyle={{ color: 'gray' }}
-          options={{
-            style: { paddingTop: 10 },
-          }}
-        />
-      </ScrollView>
-    </View>
-  );
+export default class TimeLine extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      data: 'Event3'
+    }
+  }
+
+  async componentDidMount(){
+    const response = await api.get('/');
+    this.setState({
+      data: response
+    })
+  }
+
+  render(){
+
+    const data = [
+      {
+        time: '12:00',
+        title: 'Event 2',
+        description: 'Lorem Ipsum is simply dummy text of the printing.',
+      },
+      {
+        time: '14:00',
+        title: 'Event 3',
+        description: 'Lorem Ipsum is simply dummy text of the printing.',
+      },
+      {
+        time: '16:30',
+        title: 'Event 4',
+        description:
+          'Lorem Ipsum is simply dummy text of the printing.',
+      },
+      {
+        time: '16:30',
+        title: 'Event 4',
+        description:
+          'Lorem Ipsum is simply dummy text of the printing.',
+      },
+      {
+        time: '16:30',
+        title: 'Event 4',
+        description:
+          'Lorem Ipsum is simply dummy text of the printing.',
+      },
+      {
+        time: '16:25',
+        title: 'Event 4',
+        description:
+          'Lorem Ipsum is simply dummy text of the printing.',
+      },
+      {
+        time: '16:30',
+        title: 'Atividade sobre schemas',
+        description:
+          'Segue anexo um arquivo que contém as atividades sobre o assunto lecionado na última aula. Segue anexo um arquivo que contém as atividades sobre o assunto lecionado na última aula.',
+      },
+      {
+        time: '16:30',
+        title: 'Event 4',
+        description:
+          'Lorem Ipsum is simply dummy text of the printing.',
+      },
+    ];
+
+    return (
+      <View style={styles.container}>
+        <ScrollView>
+          <Text style={styles.title}>Timeline da UC</Text>
+          <Timeline
+            data={data}
+            circleSize={18}
+            circleColor="black"
+            lineColor="black"
+            titleStyle={styles.titleStyle}
+            timeContainerStyle={styles.timeContainerStyle}
+            timeStyle={styles.timeStyle}
+            descriptionStyle={{ color: 'gray', margin: 0, padding: 0, }}
+            options={{
+              style: { paddingTop: 10 },
+            }}
+          />
+        </ScrollView>
+      </View>
+    )
+  }
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 5,
   },
   title: {
-    padding: 5,
+    padding: 20,
     fontSize: 20,
     display: 'flex',
     textAlign: 'center',
@@ -109,11 +109,14 @@ const styles = StyleSheet.create({
   },
   //Timeline
   titleStyle: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    paddingTop: -20,
+    margin: 0,
   },
   timeContainerStyle: {
     minWidth: 52,
-    marginTop: 1,
+    marginTop: 0,
+    padding: 0,
     display: 'flex',
     justifyContent: 'center',
   },
@@ -126,5 +129,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
-
-export default TimeLine;
