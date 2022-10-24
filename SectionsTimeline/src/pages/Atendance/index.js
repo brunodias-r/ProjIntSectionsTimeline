@@ -37,52 +37,52 @@ export default function Atendance() {
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
     {
       label: 'Ipsum Lorem',
       status: 'In progress',
-      dateTime: 'Sun, 4th Nov 08;34PM'
+      dateTime: 'Sun, 4th Nov 08:34PM'
     },
   ];
   //http://10.136.36.40/fibonacci/index.json
