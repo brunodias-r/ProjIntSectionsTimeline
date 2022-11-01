@@ -2,10 +2,10 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 
-import Desafio from '../pages/Desafio';
-import AtividadeEstudoPrevio from '../pages/AtividadeEstudoPrevio';
-import TimelineUC from '../pages/TimelineUC';
-import TimelineAcompanhamento from '../pages/TimelineAcompanhamento';
+import Desafio from '../components/desafio';
+import AtividadeEstudoPrevio from '../components/atividadeEstudoPrevio';
+import TimelineUC from '../components/timelineUC';
+import TimelineAcompanhamento from '../components/timelineAcompanhamento';
 
 const Tab = createBottomTabNavigator();
 
