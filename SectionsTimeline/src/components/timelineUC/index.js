@@ -8,50 +8,45 @@ export default class TimelineUC extends Component{
 
     const data = [
       {
-        time: '12:00',
-        title: 'Event 2',
+        time: '14:00 22/08/2022',
+        title: 'Avaliação do ciclo 1.',
         description: 'Lorem Ipsum is simply dummy text of the printing.',
       },
       {
-        time: '14:00',
-        title: 'Event 3',
-        description: 'Lorem Ipsum is simply dummy text of the printing.',
-      },
-      {
-        time: '16:30',
+        time: '14:00 22/08/2022',
         title: 'Event 4',
         description:
           'Lorem Ipsum is simply dummy text of the printing.',
       },
       {
-        time: '16:30',
-        title: 'Event 4',
+        time: '14:00 22/08/2022',
+        title: 'Atividade de relacionamento de tabelas.',
         description:
-          'Lorem Ipsum is simply dummy text of the printing.',
+          'Crie os relacionamentos entre as tabelas de maneira normalizada.',
       },
       {
-        time: '16:30',
-        title: 'Event 4',
+        time: '14:00 22/08/2022',
+        title: 'Atividade de consultas com ORDER BY e GROUP BY.',
         description:
-          'Lorem Ipsum is simply dummy text of the printing.',
+          'Crie consultas usando order by e group by na tabela de agencias e automóveis.',
       },
       {
-        time: '16:25',
-        title: 'Event 4',
+        time: '14:00 22/08/2022',
+        title: 'Responda o questionário de normalização em banco de dados.',
         description:
-          'Lorem Ipsum is simply dummy text of the printing.',
+          'Responda ao questionário de normalização de tabelas no banco de dados.',
       },
       {
-        time: '16:30',
+        time: '14:00 22/08/2022',
         title: 'Atividade sobre schemas',
         description:
           'Segue anexo um arquivo que contém as atividades sobre o assunto lecionado na última aula. Segue anexo um arquivo que contém as atividades sobre o assunto lecionado na última aula.',
       },
       {
-        time: '16:30',
-        title: 'Event 4',
+        time: '14:00 22/08/2022',
+        title: 'Criar scripts de consulta',
         description:
-          'Lorem Ipsum is simply dummy text of the printing.',
+          'Crie consultas por modelo, marca e placa na tabela de automóveis.',
       },
     ];
 
@@ -60,6 +55,8 @@ export default class TimelineUC extends Component{
         <ScrollView>
           <Text style={styles.title}>Timeline da UC</Text>
           <Timeline
+            showTime={false}
+            eventContainerStyle={styles.containerTimeline}
             data={data}
             circleSize={18}
             circleColor="black"
@@ -67,9 +64,9 @@ export default class TimelineUC extends Component{
             titleStyle={styles.titleStyle}
             timeContainerStyle={styles.timeContainerStyle}
             timeStyle={styles.timeStyle}
-            descriptionStyle={{ color: 'gray', margin: 0, padding: 0, }}
+            descriptionStyle={{ color: 'gray', margin: 0, paddingTop: 0, }}
             options={{
-              style: { paddingTop: 10 },
+              style: { paddingTop: 0 }
             }}
           />
         </ScrollView>
@@ -91,25 +88,27 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     justifyContent: 'center'
   },
+  containerTimeline:{
+    flexDirection: 'column'
+  },
   //Timeline
   titleStyle: {
     fontWeight: 'bold',
-    paddingTop: -20,
-    margin: 0,
+    paddingTop: -0,
+    marginTop: 0,
   },
   timeContainerStyle: {
-    minWidth: 52,
+    minWidth: 30,
     marginTop: 0,
-    padding: 0,
-    display: 'flex',
+    paddingTop: 0,
     justifyContent: 'center',
   },
   timeStyle: {
     textAlign: 'center',
-    backgroundColor: '#124eee',
-    color: 'white',
+    color: 'black',
     padding: 0,
-    borderRadius: 13,
     justifyContent: 'center'
   }
 });
+
+
