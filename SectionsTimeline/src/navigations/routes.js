@@ -6,6 +6,7 @@ import Desafio from '../components/desafio';
 import AtividadeEstudoPrevio from '../components/atividadeEstudoPrevio';
 import TimelineUC from '../components/timelineUC';
 import TimelineAcompanhamento from '../components/timelineAcompanhamento';
+import TimelineAcompanhamentoPage from '../scenes/timelineAcompanhamento/index.js';
 
 const Tab = createBottomTabNavigator();
 
@@ -61,7 +62,7 @@ export default function Routes() {
 
             <Tab.Screen
                 name="Acompanhamento"
-                component={TimelineAcompanhamento}
+                component={TimelineAcompanhamentoPage}
                 options={{
                     tabBarIcon: ({ size, color }) => (
                         <MaterialCommunityIcons name="timeline-minus" size={size} color={color} />
