@@ -22,7 +22,7 @@ export default class TimelineAcompanhamentoPage extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Text style={styles.titulo}> Timeline de Acompanhamento </Text>
+        {/* <Text style={styles.titulo}> Timeline de Acompanhamento </Text> */}
         <FlatList
           data={this.state.cursos}
           keyExtractor={item => item.id}
@@ -31,6 +31,7 @@ export default class TimelineAcompanhamentoPage extends Component {
       </SafeAreaView>
     );
   }
+
 }
 
 // export default function TimelineAcompanhamentoPage() {

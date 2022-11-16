@@ -24,7 +24,7 @@ export default class TimelineAcompanhamento extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     flexDirection: 'column',
     paddingBottom: 10,
     paddingLeft: 10,
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
   timeline: {
     flexDirection: 'row',
     width: '100%',
+    marginTop: 10,
   },
   tituloTimeline: {
     fontSize: 20,
@@ -47,17 +48,19 @@ const styles = StyleSheet.create({
     paddingRight: 5,
   },
   circulo: {
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: '50%',
-    backgroundColor: '#00315a',
+    backgroundColor: '#ffffff',
+    borderWidth: 4,
+    borderColor: '#00315a',
+    position: 'relative'
   },
   linha: {
     backgroundColor: '#00315a',
-    height: '100%',
+    height: '1000%',
     width: 2,
     justifyContent: 'center',
-    
   },
   parte2: {
     flex: 7,

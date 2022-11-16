@@ -1,75 +1,22 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import Timeline from 'react-native-timeline-flatlist';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default class TimelineUC extends Component{
-
-  render(){
-
-    const data = [
-      {
-        time: '14:00 22/08/2022',
-        title: 'Avaliação do ciclo 1.',
-        description: 'Lorem Ipsum is simply dummy text of the printing.',
-      },
-      {
-        time: '14:00 22/08/2022',
-        title: 'Event 4',
-        description:
-          'Lorem Ipsum is simply dummy text of the printing.',
-      },
-      {
-        time: '14:00 22/08/2022',
-        title: 'Atividade de relacionamento de tabelas.',
-        description:
-          'Crie os relacionamentos entre as tabelas de maneira normalizada.',
-      },
-      {
-        time: '14:00 22/08/2022',
-        title: 'Atividade de consultas com ORDER BY e GROUP BY.',
-        description:
-          'Crie consultas usando order by e group by na tabela de agencias e automóveis.',
-      },
-      {
-        time: '14:00 22/08/2022',
-        title: 'Responda o questionário de normalização em banco de dados.',
-        description:
-          'Responda ao questionário de normalização de tabelas no banco de dados.',
-      },
-      {
-        time: '14:00 22/08/2022',
-        title: 'Atividade sobre schemas',
-        description:
-          'Segue anexo um arquivo que contém as atividades sobre o assunto lecionado na última aula. Segue anexo um arquivo que contém as atividades sobre o assunto lecionado na última aula.',
-      },
-      {
-        time: '14:00 22/08/2022',
-        title: 'Criar scripts de consulta',
-        description:
-          'Crie consultas por modelo, marca e placa na tabela de automóveis.',
-      },
-    ];
-
+export default class TimelineUC extends Component {
+  render() {
     return (
       <View style={styles.container}>
-        <ScrollView>
-          <Text style={styles.title}>Timeline da UC</Text>
-          <Timeline
-            showTime={false}
-            eventContainerStyle={styles.containerTimeline}
-            data={data}
-            circleSize={18}
-            circleColor="black"
-            lineColor="black"
-            titleStyle={styles.titleStyle}
-            timeContainerStyle={styles.timeContainerStyle}
-            timeStyle={styles.timeStyle}
-            descriptionStyle={{ color: 'gray', margin: 0, paddingTop: 0, }}
-            options={{
-              style: { paddingTop: 0 }
-            }}
-          />
-        </ScrollView>
+        <View style={styles.timeline}>
+          <View style={styles.parte1}>
+            <View style={styles.circulo} />
+            <View style={styles.linha}></View>
+          </View>
+          <View style={styles.parte2}>
+            <Text style={styles.titulo}>Unidade Curricular: {this.props.data.unidadeCurricular.nome}</Text>
+            <Text style={styles.descricao}>Descrição: {this.props.data.descricao}</Text>
+            <Text style={styles.data}>Código: {this.props.data.unidadeCurricular.codigo}</Text>
+            <Text style={styles.data}>Carga horária: {this.props.data.unidadeCurricular.horas}</Text>
+          </View>
+        </View>
       </View>
     )
   }
@@ -78,37 +25,60 @@ export default class TimelineUC extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 5,
+    // backgroundColor: '#fff',
+    flexDirection: 'column',
+    paddingBottom: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    alignItems: 'center'
   },
-  title: {
-    padding: 20,
+  timeline: {
+    flexDirection: 'row',
+    width: '100%',
+    marginTop: 10,
+  },
+  tituloTimeline: {
     fontSize: 20,
-    display: 'flex',
-    textAlign: 'center',
     fontWeight: 'bold',
+    marginBottom: 15,
     justifyContent: 'center'
   },
-  containerTimeline:{
-    flexDirection: 'column'
+  parte1: {
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingRight: 5,
   },
-  //Timeline
-  titleStyle: {
-    fontWeight: 'bold',
-    paddingTop: -0,
-    marginTop: 0,
+  circulo: {
+    width: 20,
+    height: 20,
+    borderRadius: '50%',
+    backgroundColor: '#00315a',
   },
-  timeContainerStyle: {
-    minWidth: 30,
-    marginTop: 0,
-    paddingTop: 0,
+  linha: {
+    backgroundColor: '#00315a',
+    height: '100%',
+    width: 2,
     justifyContent: 'center',
+    
   },
-  timeStyle: {
-    textAlign: 'center',
-    color: 'black',
-    padding: 0,
-    justifyContent: 'center'
-  }
+  parte2: {
+    flex: 7,
+    padding: 5,
+    paddingTop: 0,
+    backgroundColor: '#C5C5C5',
+    borderRadius: 10,
+  },
+  titulo: {
+    fontWeight: 'bold',
+    fontSize: 15,
+  },
+  descricao: {
+    fontSize: 15,
+    color: '#000'
+  },
+  data: {
+    fontSize: 15,
+    color: '#656565',
+  },
 });
-
 
