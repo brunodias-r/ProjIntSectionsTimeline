@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import Routes from './navigations/routes.js';
+import IndexRoutes from './navigations/index.js';
 
 export default function IndexSrc() {
   return (
-    <NavigationContainer>
-      <Routes></Routes>
-    </NavigationContainer>
+    <IndexRoutes />
   );
 }

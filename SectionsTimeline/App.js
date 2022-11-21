@@ -3,6 +3,6 @@ import IndexSrc from './src';
 
 export default function App() {
   return (
-    <IndexSrc></IndexSrc>
+    <IndexSrc />
   );
 }
