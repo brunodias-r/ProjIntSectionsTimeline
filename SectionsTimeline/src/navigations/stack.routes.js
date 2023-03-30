@@ -1,12 +1,7 @@
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import Desafio from '../components/Desafio.js';
-import AtividadeEstudoPrevio from '../components/AtividadeEstudoPrevio.js';
 import TimelineSessoesPage from '../scenes/TimelineSessoesPage.js';
-import TimelineAcompanhamentoPage from '../scenes/TimelineAcompanhamentoPage.js';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import InfoTimelineAcompanhamentoPage from '../scenes/InfoTimelineAcompanhamentoPage.js'
 
 const Stack = createNativeStackNavigator();
 
@@ -17,21 +12,6 @@ export default function StackRoutes() {
             <Stack.Screen
                 name="Sessoes"
                 component={TimelineSessoesPage}
-            />
-
-            <Stack.Screen
-                name="Acompanhamento"
-                component={TimelineAcompanhamentoPage}
-            />
-
-            <Stack.Screen
-                name="Estudo prévio"
-                component={AtividadeEstudoPrevio}
-            />
-
-            <Stack.Screen
-                name="InfoAcompanhamento"
-                component={InfoTimelineAcompanhamentoPage}
             />
 
         </Stack.Navigator>
