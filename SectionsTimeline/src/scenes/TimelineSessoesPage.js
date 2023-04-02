@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { SafeAreaView, Text, FlatList, StyleSheet, Image, View, TouchableOpacity } from "react-native";
-
+import Moment from 'moment'
 
 export default function TimelineSessoesPage() {
 
@@ -46,6 +46,13 @@ export default function TimelineSessoesPage() {
     setImagem(require('../assets/images/verifica.png'))
   }
 
+  Moment.locale('pt-br');
+
+  function capitalize(dia){
+    return dia.substring(0,1).toLocaleUpperCase() +
+    dia.substring(1).toLocaleLowerCase();
+  }
+
   const renderItem = ({ item }) => (
     <View style={styles.container}>
       <View style={styles.timeline}>
@@ -67,10 +74,11 @@ export default function TimelineSessoesPage() {
           </TouchableOpacity>
         </View> */}
         <View style={styles.parte2}>
-          <Text style={styles.titulo}>{item.horaInicio}</Text>
+          <Text style={styles.titulo}>{Moment(item.horaInicio).format('dddd')}
+          , {Moment(item.horaInicio).format('L')}</Text>
           <Text style={styles.descricao}>{item.observacao}</Text>
           <TouchableOpacity style={styles.button} onPressOut={trocarImagem}>
-            <Text style={styles.detalhes}>Detalhes</Text>
+            <Text style={styles.detalhes}>Detalhe do encontro</Text>
           </TouchableOpacity>
         </View>
       </View>
