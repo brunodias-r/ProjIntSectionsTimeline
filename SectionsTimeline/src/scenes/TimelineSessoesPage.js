@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { SafeAreaView, Text, FlatList, StyleSheet, Image, View, TouchableOpacity } from "react-native";
-import Moment from 'moment'
+import Moment from 'moment';
+import CheckIcon from '@mui/icons-material/Check';
+import Schedule from '@mui/icons-material/Schedule';
 
 export default function TimelineSessoesPage() {
 
-  const [imagem, setImagem] = useState(require('../assets/images/relogio.png'));
+  const [imagem, setImagem] = useState(/*<Schedule style={styles.icone} />*/require('../assets/images/relogio.png'));
+  const [icone, setIcone] = useState()
   const [dataEncontro, setDataEncontro] = useState([]);
   const [dataObjeto, setDataObjeto] = useState([]);
   const [dataSituacao, setDataSituacao] = useState([]);
@@ -19,9 +22,9 @@ export default function TimelineSessoesPage() {
 
   const fetchDataObjeto = async () => {
     const resp = await fetch("http://academico3.rj.senac.br:8080/api/ObjetoAprendizagem");
-    const dataObjeto  = await resp.json();
-    setDataObjeto (dataObjeto );
-    console.log(dataObjeto )
+    const dataObjeto = await resp.json();
+    setDataObjeto(dataObjeto);
+    console.log(dataObjeto)
   };
 
   const fetchDataSituacao = async () => {
@@ -30,27 +33,23 @@ export default function TimelineSessoesPage() {
     setDataSituacao(dataSituacao);
     console.log(dataSituacao)
   };
-  
+
   useEffect(() => {
     fetchDataObjeto();
     fetchDataSituacao();
     fetchDataEncontro();
   }, []);
 
-  // function openScreen() {
-  //   // navigation.navigate('Informações', { dia: data.dia, titulo: data.titulo, situacao: data.situacao, descricao: data.descricao })
-  //   navigation.navigate('Informações', data, dataObj)
-  // }
-
   function trocarImagem() {
     setImagem(require('../assets/images/verifica.png'))
+    // setImagem(<CheckIcon style={styles.icone} />)
   }
 
   Moment.locale('pt-br');
 
-  function capitalize(dia){
-    return dia.substring(0,1).toLocaleUpperCase() +
-    dia.substring(1).toLocaleLowerCase();
+  function capitalize(dia) {
+    return dia.substring(0, 1).toLocaleUpperCase() +
+      dia.substring(1).toLocaleLowerCase();
   }
 
   const renderItem = ({ item }) => (
@@ -58,7 +57,8 @@ export default function TimelineSessoesPage() {
       <View style={styles.timeline}>
         <View style={styles.parte1}>
           <View style={styles.circulo}>
-            {/* <Image source={imagem} style={{ width: 19, height: 19 }} /> */}
+            {/* <Schedule source={imagem} style={styles.icone} /> */}
+            <Image source={require('../assets/images/relogio.png')} style={{ width: 22, height: 25 }}></Image>
           </View>
           <View style={styles.linha}></View>
         </View>
@@ -75,9 +75,12 @@ export default function TimelineSessoesPage() {
         </View> */}
         <View style={styles.parte2}>
           <Text style={styles.titulo}>{Moment(item.horaInicio).format('dddd')}
-          , {Moment(item.horaInicio).format('L')}</Text>
+            , {Moment(item.horaInicio).format('L')}</Text>
           <Text style={styles.descricao}>{item.observacao}</Text>
-          <TouchableOpacity style={styles.button} onPressOut={trocarImagem}>
+          <Text style={styles.descricao}>Situação de aprendizagem</Text>
+          <Text style={styles.descricao}>Objeto de aprendizagem</Text>
+          <Text style={styles.descricao}>Atividade</Text>
+          <TouchableOpacity style={styles.button} onPress={trocarImagem}>
             <Text style={styles.detalhes}>Detalhe do encontro</Text>
           </TouchableOpacity>
         </View>
@@ -122,11 +125,12 @@ const styles = StyleSheet.create({
   parte1: {
     justifyContent: 'flex-start',
     alignItems: 'center',
+    width: 32
   },
   circulo: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
+    width: 30,
+    height: 30,
+    borderRadius: 15,
     backgroundColor: '#00315a',
     justifyContent: 'center',
     alignItems: 'center',
@@ -134,9 +138,8 @@ const styles = StyleSheet.create({
   linha: {
     backgroundColor: '#C5C5C5',
     height: '200%',
-    width: 2,
+    width: 3,
     justifyContent: 'center',
-
   },
   parte2: {
     flex: 7,
@@ -158,20 +161,19 @@ const styles = StyleSheet.create({
   },
   titulo: {
     fontWeight: 'bold',
-    fontSize: 15,
+    fontSize: 24,
     color: "#092C4C",
   },
   descricao: {
-    fontSize: 15,
+    fontSize: 20,
     color: '#000',
     marginTop: 10,
-
   },
   data: {
     fontSize: 15,
     color: '#656565',
   },
-  button:{
+  button: {
     backgroundColor: '#092C4C',
     width: '100%',
     justifyContent: 'center',
@@ -181,10 +183,13 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     marginTop: 10,
   },
-  detalhes:{
+  detalhes: {
     color: 'white',
     fontWeight: 'bold',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  icone: {
+    color: 'white',
   }
 });
