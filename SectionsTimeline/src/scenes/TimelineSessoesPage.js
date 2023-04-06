@@ -17,26 +17,26 @@ export default function TimelineSessoesPage() {
     const resp = await fetch("http://academico3.rj.senac.br:8080/api/Encontro");
     const dataEncontro = await resp.json();
     setDataEncontro(dataEncontro);
-    console.log(dataEncontro)
+    console.log(dataEncontro+"\n\n\n\n\n");
   };
 
-  const fetchDataObjeto = async () => {
-    const resp = await fetch("http://academico3.rj.senac.br:8080/api/ObjetoAprendizagem");
-    const dataObjeto = await resp.json();
-    setDataObjeto(dataObjeto);
-    console.log(dataObjeto)
-  };
+  // const fetchDataObjeto = async () => {
+  //   const resp = await fetch("http://academico3.rj.senac.br:8080/api/ObjetoAprendizagem");
+  //   const dataObjeto = await resp.json();
+  //   setDataObjeto(dataObjeto);
+  //   console.log(dataObjeto)
+  // };
 
-  const fetchDataSituacao = async () => {
-    const resp = await fetch("http://academico3.rj.senac.br:8080/api/ObjetoAprendizagem");
-    const dataSituacao = await resp.json();
-    setDataSituacao(dataSituacao);
-    console.log(dataSituacao)
-  };
+  // const fetchDataSituacao = async () => {
+  //   const resp = await fetch("http://academico3.rj.senac.br:8080/api/ObjetoAprendizagem");
+  //   const dataSituacao = await resp.json();
+  //   setDataSituacao(dataSituacao);
+  //   console.log(dataSituacao)
+  // };
 
   useEffect(() => {
-    fetchDataObjeto();
-    fetchDataSituacao();
+    // fetchDataObjeto();
+    // fetchDataSituacao();
     fetchDataEncontro();
   }, []);
 
@@ -137,18 +137,20 @@ const styles = StyleSheet.create({
   },
   linha: {
     backgroundColor: '#C5C5C5',
-    height: '200%',
+    height: '100%',
     width: 3,
     justifyContent: 'center',
   },
   parte2: {
     flex: 7,
     padding: 15,
+    paddingBottom: 15, 
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
     marginLeft: 10,
-    boxShadow: "4px 2px 4px 4px rgba(0, 0, 0, 0.15)",
-    /************/
+    boxShadow: "0px 0px 4px 4px rgba(0, 0, 0, 0.15)",
+    marginBottom: 0,
+    // shadowColor: "0 0 4 4 rgba(0, 0, 0, 0.15)",
   },
   badge: {
     // backgroundColor: '#F78B1F',
@@ -178,16 +180,19 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5,
-    padding: 10,
+    borderRadius: 8,
+    padding: 20,
     paddingTop: 10,
-    marginTop: 10,
+    marginTop: 15,
+    marginBottom: 0,
   },
   detalhes: {
     color: 'white',
     fontWeight: 'bold',
     justifyContent: 'center',
     alignItems: 'center',
+    fontSize: 20,
+    paddingTop: 5,
   },
   icone: {
     color: 'white',
